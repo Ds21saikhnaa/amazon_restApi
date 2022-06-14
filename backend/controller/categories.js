@@ -2,6 +2,7 @@ export const getCategories = (req, res, next) => {
     res.status(200).json({
         hello: "snu",
         data: ["adal", "aimshig"],
+        user: req.userID
     })
 }
 export const getCategory = (req, res, next) => {
