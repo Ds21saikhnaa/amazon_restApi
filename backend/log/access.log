@@ -5,3 +5,4 @@
 ::1 - - [14/Jun/2022:11:06:00 +0000] "POST /api/v1/categories HTTP/1.1" 200 31 "-" "PostmanRuntime/7.29.0"
 ::1 - - [14/Jun/2022:11:06:32 +0000] "PUT /api/v1/categories/12 HTTP/1.1" 200 50 "-" "PostmanRuntime/7.29.0"
 ::1 - - [14/Jun/2022:11:06:53 +0000] "DELETE /api/v1/categories/12 HTTP/1.1" 200 41 "-" "PostmanRuntime/7.29.0"
+::1 - - [16/Jun/2022:06:40:59 +0000] "DELETE /api/v1/categories/12 HTTP/1.1" 200 41 "-" "PostmanRuntime/7.29.0"
