@@ -8,6 +8,7 @@ import rotatingFileStream from "rotating-file-stream"
 import catRouter from "./router/categories.js";
 import {logger} from "./middleware/logger.js";
 import colors from "colors";
+import exp from "constants";
 dotenv.config({path: "./config/config.env"});
 connectDB();
 const __filename = fileURLToPath(import.meta.url);
@@ -19,6 +20,7 @@ const accessLogStream = rotatingFileStream.createStream('access.log', {
 })
 
 const app = express();
+app.use(express.json());
 app.use(logger);
 app.use(morgan('combined', { stream: accessLogStream }))
 app.use("/api/v1/categories/",catRouter);
