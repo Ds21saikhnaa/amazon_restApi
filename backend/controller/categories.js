@@ -1,16 +1,31 @@
 import { cat } from "../models/Category.js"
-export const getCategories = (req, res, next) => {
-    res.status(200).json({
-        hello: "snu",
-        data: ["adal", "aimshig"],
-        user: req.userID
-    })
-}
-export const getCategory = (req, res, next) => {
-    res.status(200).json({
-        hello: "snu",
-        data: `${req.params.id}-ta cat medeeelel`,
-    })
+export const getCategories = async(req, res, next) => {
+    try{
+        const categories = await cat.find();
+        res.status(200).json({
+            success: true,
+            data: categories,
+        });
+    } catch(err){
+        next(err);
+    }
+};
+export const getCategory = async(req, res, next) => {
+    try{
+        const category = await cat.findById(req.params.id);
+        if(!category){
+            return res.status(400).json({
+                success: false,
+                err: `${req.params.id} Id-tai medeelel alga`,
+            }); 
+        }
+        res.status(200).json({
+            success: true,
+            data: category,
+        });
+    }catch(err){
+        next(err);
+    }
 }
 export const createCategory = async (req, res, next) => {
     try{
@@ -21,21 +36,43 @@ export const createCategory = async (req, res, next) => {
             data: category,
         })
     } catch(err){
-        res.status(400).json({
-            success: false,
-            err: err,
-        })
+        next(err);
     }
 }
-export const updateCategory = (req, res, next) => {
-    res.status(200).json({
-        hello: "snu",
-        data: `${req.params.id}-ta cat update hiigdlee`,
-    })
+export const updateCategory = async(req, res, next) => {
+    try{
+        const category = await cat.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+            runValidators: true,
+        });
+        if(!category){
+            return res.status(400).json({
+                success: false,
+                err: `${req.params.id} Id-tai medeelel alga`,
+            }); 
+        }
+        res.status(200).json({
+            success: true,
+            data: category,
+        });
+    }catch(err){
+        next(err);
+    }
 }
-export const deleteCategory = (req, res, next) => {
-    res.status(200).json({
-        hello: "snu",
-        data: `${req.params.id}-ta cat ustlaa`,
-    })
+export const deleteCategory = async(req, res, next) => {
+    try{
+        const category = await cat.findByIdAndDelete(req.params.id);
+        if(!category){
+            return res.status(400).json({
+                success: false,
+                err: `${req.params.id} Id-tai medeelel alga`,
+            }); 
+        }
+        res.status(200).json({
+            success: true,
+            data: category,
+        });
+    }catch(err){
+        next(err);
+    }
 }
