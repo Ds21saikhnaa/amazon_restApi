@@ -1,78 +1,57 @@
 import { cat } from "../models/Category.js"
-export const getCategories = async(req, res, next) => {
-    try{
-        const categories = await cat.find();
-        res.status(200).json({
-            success: true,
-            data: categories,
-        });
-    } catch(err){
-        next(err);
+import { MyError } from "../utils/myError.js";
+//import { asyncHandler } from "../middleware/asyncHandler.js";
+import asyncHandler from "express-async-handler"
+export const getCategories = asyncHandler(async(req, res, next) => {
+    const categories = await cat.find();
+    res.status(200).json({
+        success: true,
+        data: categories,
+    });
+});
+export const getCategory = asyncHandler(async(req, res, next) => {
+    const category = await cat.findById(req.params.id);
+
+    if(!category){
+        throw new MyError(`${req.params.id} Id-tai medeelel algaa`, 400);
     }
-};
-export const getCategory = async(req, res, next) => {
-    try{
-        const category = await cat.findById(req.params.id);
-        if(!category){
-            return res.status(400).json({
-                success: false,
-                err: `${req.params.id} Id-tai medeelel alga`,
-            }); 
-        }
-        res.status(200).json({
-            success: true,
-            data: category,
-        });
-    }catch(err){
-        next(err);
-    }
-}
-export const createCategory = async (req, res, next) => {
-    try{
+    res.status(200).json({
+        success: true,
+        data: category,
+    });
+    // try{
+    // }catch(err){
+    //     next(err);
+    // }
+});
+export const createCategory = asyncHandler(async (req, res, next) => {
         const category = await cat.create(req.body);
 
         res.status(200).json({
             success: true,
             data: category,
         })
-    } catch(err){
-        next(err);
-    }
-}
-export const updateCategory = async(req, res, next) => {
-    try{
+});
+export const updateCategory = asyncHandler(async(req, res, next) => {
         const category = await cat.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true,
         });
         if(!category){
-            return res.status(400).json({
-                success: false,
-                err: `${req.params.id} Id-tai medeelel alga`,
-            }); 
+            throw new MyError(`${req.params.id} Id-tai medeelel algaa`, 400);
         }
         res.status(200).json({
             success: true,
             data: category,
         });
-    }catch(err){
-        next(err);
-    }
-}
-export const deleteCategory = async(req, res, next) => {
-    try{
+});
+export const deleteCategory = asyncHandler(async(req, res, next) => {
         const category = await cat.findByIdAndDelete(req.params.id);
         if(!category){
-            return res.status(400).json({
-                success: false,
-                err: `${req.params.id} Id-tai medeelel alga`,
-            }); 
+            throw new MyError(`${req.params.id} Id-tai medeelel algaa`, 400);
         }
         res.status(200).json({
             success: true,
             data: category,
         });
-    }catch(err){
-        next(err);
-    }
-}
+});
