@@ -43,3 +43,8 @@
 ::1 - - [19/Jun/2022:11:50:24 +0000] "GET /api/v1/categories/62ad8cc81f2dca3be8987d8 HTTP/1.1" 500 142 "-" "PostmanRuntime/7.29.0"
 ::1 - - [19/Jun/2022:11:51:08 +0000] "GET /api/v1/categories/62ad8cc81f2dca3be8987d8 HTTP/1.1" 400 54 "-" "PostmanRuntime/7.29.0"
 ::1 - - [19/Jun/2022:11:51:12 +0000] "GET /api/v1/categories/62ad8cc81f2dca3be8987d811 HTTP/1.1" 400 54 "-" "PostmanRuntime/7.29.0"
+::1 - - [19/Jun/2022:17:17:57 +0000] "POST /api/v1/categories HTTP/1.1" 400 170 "-" "PostmanRuntime/7.29.0"
+::1 - - [19/Jun/2022:17:18:21 +0000] "POST /api/v1/categories HTTP/1.1" 200 163 "-" "PostmanRuntime/7.29.0"
+::1 - - [19/Jun/2022:17:18:39 +0000] "POST /api/v1/categories HTTP/1.1" 200 163 "-" "PostmanRuntime/7.29.0"
+::1 - - [19/Jun/2022:17:19:03 +0000] "POST /api/v1/categories HTTP/1.1" 200 161 "-" "PostmanRuntime/7.29.0"
+::1 - - [19/Jun/2022:17:19:08 +0000] "POST /api/v1/categories HTTP/1.1" 400 163 "-" "PostmanRuntime/7.29.0"
