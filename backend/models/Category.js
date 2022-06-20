@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { transliterate as tr, slugify } from "transliteration";
 const CategorySchema = new mongoose.Schema({
     name:{
         type: String,
@@ -7,6 +8,7 @@ const CategorySchema = new mongoose.Schema({
         trim: true,
         maxlength: [50, "category-in ner urt deed tal n 50 temdegt bh ystoi."],
     },
+    slug: String,
     description : {
         type: String,
         required: [true, "category-in tailbariig zaawal oruulna uu!"],
@@ -27,4 +29,8 @@ const CategorySchema = new mongoose.Schema({
         default: Date.now,
     },
 });
+CategorySchema.pre("save", function(next){
+    this.slug = slugify(this.name);
+    next();
+})
 export const cat = mongoose.model("Category", CategorySchema);
