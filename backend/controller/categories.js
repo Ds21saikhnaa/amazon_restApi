@@ -3,7 +3,12 @@ import { MyError } from "../utils/myError.js";
 //import { asyncHandler } from "../middleware/asyncHandler.js";
 import asyncHandler from "express-async-handler"
 export const getCategories = asyncHandler(async(req, res, next) => {
-    const categories = await cat.find();
+    const sort = req.query.sort
+    delete req.query.sort;
+    const select = req.query.select;
+    delete req.query.select;
+    console.log(sort, select);
+    const categories = await cat.find(req.query, select).sort(sort);
     res.status(200).json({
         success: true,
         data: categories,

@@ -38,5 +38,13 @@
         "photo": "no-photo.jpg",
         "createdAt": "2022-06-19T17:19:03.759Z",
         "__v": 0
+    },
+    {
+        "_id": "62b19b345ac96b7101ae87e2",
+        "name": "физикын ном",
+        "description": "хэрэгтэй шинжлэх ухаан",
+        "photo": "no-photo.jpg",
+        "createdAt": "2022-06-21T10:19:32.971Z",
+        "__v": 0
     }
 ]
