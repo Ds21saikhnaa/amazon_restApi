@@ -6,6 +6,7 @@ import morgan from "morgan";
 import {connectDB} from "./config/db.js"
 import rotatingFileStream from "rotating-file-stream"
 import catRouter from "./router/categories.js";
+import bookRouter from "./router/books.js";
 import {logger} from "./middleware/logger.js";
 import { errorHandler } from "./middleware/error.js";
 import colors from "colors";
@@ -29,6 +30,7 @@ app.use(express.json());
 app.use(logger);
 app.use(morgan('combined', { stream: accessLogStream }))
 app.use("/api/v1/categories/",catRouter);
+app.use("/api/v1/books/",bookRouter)
 app.use(errorHandler);
 
 const server =  app.listen(process.env.PORT, console.log(`hello ${process.env.PORT} server`.underline.yellow.bold));

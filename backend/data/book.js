@@ -12,7 +12,7 @@
     "new",
     "pdf"
     ],
-    "category": "5e96cc1ba816c94e009a9c9e"
+    "category": "62b19b345ac96b7101ae87e2"
     },
     {
     "name": "Хүрээлэн буй орчны микробиологи",
@@ -28,7 +28,7 @@
     "old",
     "kindle"
     ],
-    "category": "5e96cc1ba816c94e009a9c9e"
+    "category": "62b19b345ac96b7101ae87e2"
     },
     {
     "name": "Генийн инженерчлэлийн аргаар хүн бүтээх нь : 2010-3010",
@@ -43,7 +43,7 @@
     "new",
     "old"
     ],
-    "category": "5e96cc1ba816c94e009a9c9e"
+    "category": "62b19b345ac96b7101ae87e2"
     },
     {
     "name": "Хар нүх ба шинэ ертөнц",
@@ -60,7 +60,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "5e96cc1ba816c94e009a9c9e"
+    "category": "62b19b345ac96b7101ae87e2"
     },
     {
     "name": "Монгол хаадын бизнес загвар-хатуу хавтастай",
@@ -74,7 +74,7 @@
     "available": [
     "pdf"
     ],
-    "category": "5e9047fd49941f52dcb01b35"
+    "category": "62bc11db5a26f5d098edbc50"
     },
     {
     "name": "Банк санхүүгийн байгууллагын нягтлан бодох бүртгэл",
@@ -89,7 +89,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "5e9047fd49941f52dcb01b35"
+    "category": "62bc11db5a26f5d098edbc50"
     },
     {
     "name": "Бичил, жижиг, дунд бизнес эрхлэгчдэд зориулсан төсөл бичих заавар",
@@ -103,7 +103,7 @@
     "available": [
     "new"
     ],
-    "category": "5e9047fd49941f52dcb01b35"
+    "category": "62bc11db5a26f5d098edbc50"
     },
     {
     "name": "Өдөр бүр Дракертай хамт: Нэгдүгээр хэсэг (1-6 дугаар сар) (Өдөр бүр Дракертай хамт)",
@@ -118,7 +118,7 @@
     "new",
     "old"
     ],
-    "category": "5e9047fd49941f52dcb01b35"
+    "category": "62bc11db5a26f5d098edbc50"
     },
     {
     "name": "Луун шивээст охин, I (Millennium)",
@@ -132,7 +132,7 @@
     "available": [
     "new"
     ],
-    "category": "5e90434cd433fa11b078ed8a"
+    "category": "62af5a6f2d8973b0a2535971"
     },
     {
     "name": "Цаг хугацааны эргүүл, II (Адал явдал, шинжлэх ухааны уран зөгнөлт зохиолын цуврал)",
@@ -149,7 +149,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "5e90434cd433fa11b078ed8a"
+    "category": "62af5a6f2d8973b0a2535971"
     },
     {
     "name": "Каллисто гараг (Мартагдашгүй ном)",
@@ -166,7 +166,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "5e90434cd433fa11b078ed8a"
+    "category": "62af5a6f2d8973b0a2535971"
     },
     {
     "name": "Өлсгөлөн тулаан, I (Өлсгөлөн тулаан)",
@@ -181,7 +181,7 @@
     "new",
     "kindle"
     ],
-    "category": "5e90434cd433fa11b078ed8a"
+    "category": "62af5a6f2d8973b0a2535971"
     },
     {
     "name": "Абсурд зүүдний-хот",
@@ -198,7 +198,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "5e90434cd433fa11b078ed8a"
+    "category": "62af5a6f2d8973b0a2535971"
     },
     {
     "name": "Java : Объект хандлагат програмчлал",
@@ -215,7 +215,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "5e90478549941f52dcb01b34"
+    "category": "62af5a5c2d8973b0a253596f"
     },
     {
     "id": 49008,
@@ -230,7 +230,7 @@
     "available": [
     "old"
     ],
-    "category": "5e90478549941f52dcb01b34"
+    "category": "62af5a5c2d8973b0a253596f"
     },
     {
     "name": "Статистик програмчлалын R хэл",
@@ -245,7 +245,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "5e90478549941f52dcb01b34"
+    "category": "62af5a5c2d8973b0a253596f"
     },
     {
     "id": 13142,
@@ -261,7 +261,7 @@
     "new",
     "pdf"
     ],
-    "category": "5e90478549941f52dcb01b34"
+    "category": "62af5a5c2d8973b0a253596f"
     },
     {
     "name": "С/С ++ програмчлалд алхам алхмаар",
@@ -275,6 +275,6 @@
     "available": [
     "old"
     ],
-    "category": "5e90478549941f52dcb01b34"
+    "category": "62af5a5c2d8973b0a253596f"
     }
     ]
