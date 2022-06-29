@@ -48,6 +48,13 @@ const BookSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-    },
-});
+    }
+},{toJSON:{virtuals: true}, toObject:{virtuals: true}}
+);
+BookSchema.virtual("programmist").get(function(){
+    let tokens = this.author.split(' ');
+    if(tokens.length === 1) tokens = this.author.split(".");
+    if(tokens.length === 2) return tokens[1];
+    else return tokens[0];
+})
 export const book = mongoose.model("Book", BookSchema);

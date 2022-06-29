@@ -30,7 +30,7 @@ export const getCategories = asyncHandler(async(req, res, next) => {
     });
 });
 export const getCategory = asyncHandler(async(req, res, next) => {
-    const category = await cat.findById(req.params.id);
+    const category = await cat.findById(req.params.id).populate("books");
 
     if(!category){
         throw new MyError(`${req.params.id} Id-tai medeelel algaa`, 400);

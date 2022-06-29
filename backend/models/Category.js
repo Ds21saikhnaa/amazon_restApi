@@ -28,7 +28,15 @@ const CategorySchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-});
+}, {toJSON:{virtuals: true}, toObject:{virtuals:true}});
+
+CategorySchema.virtual("books", {
+    ref:"Book",
+    localField:"_id",
+    foreignField:"category",
+    justOne:false,
+})
+
 CategorySchema.pre("save", function(next){
     this.slug = slugify(this.name);
     this.averageRating = Math.floor(Math.random() * 10) + 1;
