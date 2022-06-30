@@ -66,10 +66,11 @@ export const updateCategory = asyncHandler(async(req, res, next) => {
         });
 });
 export const deleteCategory = asyncHandler(async(req, res, next) => {
-        const category = await cat.findByIdAndDelete(req.params.id);
+        const category = await cat.findById(req.params.id);
         if(!category){
             throw new MyError(`${req.params.id} Id-tai medeelel algaa`, 400);
         }
+        category.remove();
         res.status(200).json({
             success: true,
             data: category,
