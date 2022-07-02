@@ -61,11 +61,11 @@ BookSchema.statics.computeCategoryAvaragePrice = async (catId) => {
 }
 
 BookSchema.post("save", () => {
-
+    this.constructor.computeCategoryAvaragePrice(this.category);
 });
 
-BookSchema.post("remove", () => {
-    
+BookSchema.pre("remove", () => {
+    this.constructor.computeCategoryAvaragePrice(this.category);
 });
 
 
