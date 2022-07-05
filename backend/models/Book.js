@@ -6,7 +6,7 @@ const BookSchema = new mongoose.Schema({
         required: [true, "nomiin neriig oruulna uu!"],
         unique: true,
         trim: true,
-        maxlength: [250, "nomiin ner urt deed tal n 250 temdegt bh ystoi."],
+        maxlength: [350, "nomiin ner urt deed tal n 350 temdegt bh ystoi."],
     },
     photo :{
         type: String,
@@ -52,7 +52,7 @@ const BookSchema = new mongoose.Schema({
 },{toJSON:{virtuals: true}, toObject:{virtuals: true}}
 );
 
-BookSchema.statics.computeCategoryAvaragePrice = async (catId) => {
+BookSchema.statics.computeCategoryAvaragePrice = async function(catId) {
     const obj = await this.aggregate([
         {$match: {category: catId}},
         {$group: {_id: "$category", avgPrice:{$avg:"$price"}}},
@@ -60,14 +60,13 @@ BookSchema.statics.computeCategoryAvaragePrice = async (catId) => {
     console.log(obj);
 }
 
-BookSchema.post("save", () => {
+BookSchema.post("save", function() {
     this.constructor.computeCategoryAvaragePrice(this.category);
 });
 
-BookSchema.pre("remove", () => {
+BookSchema.pre("remove", function() {
     this.constructor.computeCategoryAvaragePrice(this.category);
 });
-
 
 BookSchema.virtual("programmist").get(function(){
     let tokens = this.author.split(' ');

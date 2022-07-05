@@ -74,7 +74,7 @@
     "available": [
     "pdf"
     ],
-    "category": "62bc11db5a26f5d098edbc50"
+    "category": "62bab0f59c6e7a2c1bda1cbe"
     },
     {
     "name": "Банк санхүүгийн байгууллагын нягтлан бодох бүртгэл",
@@ -89,7 +89,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "62bc11db5a26f5d098edbc50"
+    "category": "62bab0f59c6e7a2c1bda1cbe"
     },
     {
     "name": "Бичил, жижиг, дунд бизнес эрхлэгчдэд зориулсан төсөл бичих заавар",
@@ -103,7 +103,7 @@
     "available": [
     "new"
     ],
-    "category": "62bc11db5a26f5d098edbc50"
+    "category": "62bab0f59c6e7a2c1bda1cbe"
     },
     {
     "name": "Өдөр бүр Дракертай хамт: Нэгдүгээр хэсэг (1-6 дугаар сар) (Өдөр бүр Дракертай хамт)",
@@ -118,7 +118,7 @@
     "new",
     "old"
     ],
-    "category": "62bc11db5a26f5d098edbc50"
+    "category": "62bab0f59c6e7a2c1bda1cbe"
     },
     {
     "name": "Луун шивээст охин, I (Millennium)",
@@ -132,7 +132,7 @@
     "available": [
     "new"
     ],
-    "category": "62af5a6f2d8973b0a2535971"
+    "category": "62ad8cc81f2dca3be8987d80"
     },
     {
     "name": "Цаг хугацааны эргүүл, II (Адал явдал, шинжлэх ухааны уран зөгнөлт зохиолын цуврал)",
@@ -149,7 +149,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "62af5a6f2d8973b0a2535971"
+    "category": "62ad8cc81f2dca3be8987d80"
     },
     {
     "name": "Каллисто гараг (Мартагдашгүй ном)",
@@ -166,7 +166,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "62af5a6f2d8973b0a2535971"
+    "category": "62ad8cc81f2dca3be8987d80"
     },
     {
     "name": "Өлсгөлөн тулаан, I (Өлсгөлөн тулаан)",
@@ -181,7 +181,7 @@
     "new",
     "kindle"
     ],
-    "category": "62af5a6f2d8973b0a2535971"
+    "category": "62ad8cc81f2dca3be8987d80"
     },
     {
     "name": "Абсурд зүүдний-хот",
@@ -198,7 +198,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "62af5a6f2d8973b0a2535971"
+    "category": "62ad8cc81f2dca3be8987d80"
     },
     {
     "name": "Java : Объект хандлагат програмчлал",
@@ -215,7 +215,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "62af5a5c2d8973b0a253596f"
+    "category": "62adfdf8fff1608e52fc9325"
     },
     {
     "id": 49008,
@@ -230,7 +230,7 @@
     "available": [
     "old"
     ],
-    "category": "62af5a5c2d8973b0a253596f"
+    "category": "62adfdf8fff1608e52fc9325"
     },
     {
     "name": "Статистик програмчлалын R хэл",
@@ -245,7 +245,7 @@
     "kindle",
     "pdf"
     ],
-    "category": "62af5a5c2d8973b0a253596f"
+    "category": "62adfdf8fff1608e52fc9325"
     },
     {
     "id": 13142,
@@ -261,7 +261,7 @@
     "new",
     "pdf"
     ],
-    "category": "62af5a5c2d8973b0a253596f"
+    "category": "62adfdf8fff1608e52fc9325"
     },
     {
     "name": "С/С ++ програмчлалд алхам алхмаар",
@@ -275,6 +275,6 @@
     "available": [
     "old"
     ],
-    "category": "62af5a5c2d8973b0a253596f"
+    "category": "62adfdf8fff1608e52fc9325"
     }
     ]
