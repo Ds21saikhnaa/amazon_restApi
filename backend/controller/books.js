@@ -1,6 +1,7 @@
 import { book } from "../models/Book.js"
 import { cat } from "../models/Category.js"
 import { MyError } from "../utils/myError.js";
+import path  from "path";
 import asyncHandler from "express-async-handler";
 //api/v1/books
 //api/v1/categories/:catId/books
@@ -74,4 +75,38 @@ export const updateBook = asyncHandler(async(req, res, next) => {
         success: true,
         data: booked,
     });
+});
+// PUT: api/v1/books/:id/photo
+export const uploadBookPhoto = asyncHandler(async(req, res, next) => {
+    const booked = await book.findById(req.params.id);
+    if(!booked){
+        throw new MyError(`${req.params.id} Id-tai medeelel algaa`, 400);
+    }
+
+    const file = req.files.file; 
+    if(!file.mimetype.startsWith("image")){
+        throw new MyError(`ta zurag upload hiine uu!`, 400);
+    } 
+    if(file.size > process.env.MAX_UPLOAD_FILE_SIZE){
+        throw new MyError(`tanii zuragni hemjee hetersen bn!`, 400);
+    }
+
+    file.name = `photo_${req.params.id}${path.parse(file.name).ext}`;
+
+    file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, err => {
+        if(err){
+            throw new MyError(`file huulahad aldaa garlaa!`, 400);
+        }
+
+    book.photo = file.name;
+    book.save();
+        res.status(200).json({
+            success: true,
+            data: file.name,
+        })
+    })
+    // res.status(200).json({
+    //     success: true,
+    //     data: booked,
+    // });
 });

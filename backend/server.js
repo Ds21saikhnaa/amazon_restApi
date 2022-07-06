@@ -4,7 +4,8 @@ import path from "path";
 import { fileURLToPath } from 'url';
 import morgan from "morgan";
 import {connectDB} from "./config/db.js"
-import rotatingFileStream from "rotating-file-stream"
+import rotatingFileStream from "rotating-file-stream";
+import fileUpload from "express-fileupload";
 import catRouter from "./router/categories.js";
 import bookRouter from "./router/books.js";
 import {logger} from "./middleware/logger.js";
@@ -27,6 +28,7 @@ const accessLogStream = rotatingFileStream.createStream('access.log', {
 })
 
 app.use(express.json());
+app.use(fileUpload());
 app.use(logger);
 app.use(morgan('combined', { stream: accessLogStream }))
 app.use("/api/v1/categories/",catRouter);

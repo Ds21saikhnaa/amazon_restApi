@@ -29,7 +29,7 @@ const books = JSON.parse(
 const importData = async() => {
     try{
         await cat.create(categories);
-        // await book.create(books);
+        await book.create(books);
         console.log("import is done...".green.inverse);
     }catch (err){
         console.log(err);

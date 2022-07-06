@@ -58,6 +58,11 @@ BookSchema.statics.computeCategoryAvaragePrice = async function(catId) {
         {$group: {_id: "$category", avgPrice:{$avg:"$price"}}},
     ]);
     console.log(obj);
+
+    await this.model("Category").findByIdAndUpdate(catId, {
+        averagePrice: obj[0].avgPrice,
+    });
+    return obj;
 }
 
 BookSchema.post("save", function() {
