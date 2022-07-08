@@ -2,28 +2,47 @@ import { book } from "../models/Book.js"
 import { cat } from "../models/Category.js"
 import { MyError } from "../utils/myError.js";
 import path  from "path";
+import { paginate } from "../utils/paginate.js";
 import asyncHandler from "express-async-handler";
 //api/v1/books
-//api/v1/categories/:catId/books
 export const getBooks = asyncHandler(async(req, res, next) => {
-    let query;
-    if(req.params.categoryId){
-        query = book.find({category: req.params.categoryId});
-    }else{
-        query = book.find().populate({
-            path:"category",
-            select: "name averagePrice",
-        });
-    }
-
-    const books = await query;
-
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 5;
+    const sort = req.query.sort
+    const select = req.query.select;
+    ["select", "sort", "page", "limit"].forEach((el) => delete req.query[el]);
+    //pagination
+    const pagination = await paginate(page, limit, book);
+    const books = await book.find(req.query, select).populate({
+        path:"category",
+        select: "name averagePrice",
+    }).sort(sort).skip(pagination.start - 1).limit(limit);
+    
     res.status(200).json({
         success: true,
         count: books.length,
         data: books,
+        pagination
     })
 });
+//api/v1/categories/:catId/books
+export const getCategoryBooks = asyncHandler(async(req, res, next) => {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 5;
+    const sort = req.query.sort
+    const select = req.query.select;
+    ["select", "sort", "page", "limit"].forEach((el) => delete req.query[el]);
+    //pagination
+    const pagination = await paginate(page, limit, book);
+    const books = await book.find({...req.query, category: req.params.categoryId}, select).sort(sort).skip(pagination.start - 1).limit(limit);
+    res.status(200).json({
+        success: true,
+        count: books.length,
+        data: books,
+        pagination
+    })
+});
+
 export const getBook = asyncHandler(async(req, res, next) => {
    
     const booked = await book.findById(req.params.id);
@@ -98,8 +117,8 @@ export const uploadBookPhoto = asyncHandler(async(req, res, next) => {
             throw new MyError(`file huulahad aldaa garlaa!`, 400);
         }
 
-    book.photo = file.name;
-    book.save();
+    booked.photo = file.name;
+    booked.save();
         res.status(200).json({
             success: true,
             data: file.name,

@@ -1,28 +1,20 @@
 import { cat } from "../models/Category.js"
 import { MyError } from "../utils/myError.js";
+import { paginate } from "../utils/paginate.js";
 //import { asyncHandler } from "../middleware/asyncHandler.js";
 import asyncHandler from "express-async-handler"
 export const getCategories = asyncHandler(async(req, res, next) => {
     
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit);
+    const limit = parseInt(req.query.limit) || 10;
     const sort = req.query.sort
     const select = req.query.select;
     ["select", "sort", "page", "limit"].forEach((el) => delete req.query[el]);
     //pagination
-    const total = await cat.countDocuments();
-    const pageCount = Math.ceil(total/limit);
-    const start = (page - 1) * limit + 1;
-    let end = start + limit - 1;
-    if(end>total) end = total;
-
-    const pagination = {total, pageCount, start , end, limit};
-
-    if(page < pageCount) pagination.nextPage = page + 1;
-    if(page > 1 ) pagination .prevPage = page - 1;
+    const pagination = await paginate(page, limit, cat);
     
     console.log(sort, select);
-    const categories = await cat.find(req.query, select).sort(sort).skip(start - 1).limit(limit);
+    const categories = await cat.find(req.query, select).sort(sort).skip(pagination.start - 1).limit(limit);
     res.status(200).json({
         success: true,
         data: categories,
