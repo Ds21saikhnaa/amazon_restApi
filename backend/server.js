@@ -8,6 +8,7 @@ import rotatingFileStream from "rotating-file-stream";
 import fileUpload from "express-fileupload";
 import catRouter from "./router/categories.js";
 import bookRouter from "./router/books.js";
+import userRouter from "./router/users.js";
 import {logger} from "./middleware/logger.js";
 import { errorHandler } from "./middleware/error.js";
 import colors from "colors";
@@ -32,7 +33,8 @@ app.use(fileUpload());
 app.use(logger);
 app.use(morgan('combined', { stream: accessLogStream }))
 app.use("/api/v1/categories/",catRouter);
-app.use("/api/v1/books/",bookRouter)
+app.use("/api/v1/books/",bookRouter);
+app.use("/api/v1/users/",userRouter);
 app.use(errorHandler);
 
 const server =  app.listen(process.env.PORT, console.log(`hello ${process.env.PORT} server`.underline.yellow.bold));
