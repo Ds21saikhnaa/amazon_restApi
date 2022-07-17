@@ -13,6 +13,17 @@ export const protect = asyncHandler(async(req, res, next) => {
 
     const tokenObj = jwt.verify(token, process.env.JWT_SECRET);
 
-    req.user = User.findById(tokenObj.id);
+    // req.user = User.findById(tokenObj.id);
+    req.userId = tokenObj.id;
+    req.userRole = tokenObj.role;
     next();
 });
+
+export const authorize = (...roles) => {
+    return(req, res, next) => {
+        if(!roles.includes(req.userRole)){
+            throw new MyError(`tanii erh ${req.userRole} bn. Ene erh ene uildlig hiihed hureltsehgui!`, 403);
+        }
+        next();
+    }
+}

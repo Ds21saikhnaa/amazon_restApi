@@ -25,6 +25,29 @@ export const getBooks = asyncHandler(async(req, res, next) => {
         pagination
     })
 });
+
+export const getUserBooks = asyncHandler(async(req, res, next) => {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 5;
+    const sort = req.query.sort
+    const select = req.query.select;
+    ["select", "sort", "page", "limit"].forEach((el) => delete req.query[el]);
+    //pagination
+    const pagination = await paginate(page, limit, book);
+    req.query.createUser = req.userId;
+    const books = await book.find(req.query, select).populate({
+        path:"category",
+        select: "name averagePrice",
+    }).sort(sort).skip(pagination.start - 1).limit(limit);
+    
+    res.status(200).json({
+        success: true,
+        count: books.length,
+        data: books,
+        pagination
+    })
+});
+
 //api/v1/categories/:catId/books
 export const getCategoryBooks = asyncHandler(async(req, res, next) => {
     const page = parseInt(req.query.page) || 1;
@@ -63,6 +86,7 @@ export const createBook = asyncHandler(async(req, res, next) => {
         throw new MyError(req.body.category + "id-ta nom baihgui baina.", 400);
     }
     
+    req.body.createUser = req.userId;
     const booked = await book.create(req.body);
     
     res.status(200).json({
@@ -76,6 +100,9 @@ export const deleteBook = asyncHandler(async(req, res, next) => {
     if(!booked){
         throw new MyError(req.params.id + "id-ta nom baihgui baina.", 404);
     }
+    if(booked.createUser.toString() !== req.userId && req.userRole !== "admin"){
+        throw new MyError("Ta zowhon oorin nomiig zaswarlah erhtei", 403)
+    }
     booked.remove();
     res.status(200).json({
         success: true,
@@ -83,13 +110,18 @@ export const deleteBook = asyncHandler(async(req, res, next) => {
     })
 });
 export const updateBook = asyncHandler(async(req, res, next) => {
-    const booked = await book.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-        runValidators: true,
-    });
+    const booked = await book.findById(req.params.id);
     if(!booked){
         throw new MyError(`${req.params.id} Id-tai medeelel algaa`, 400);
     }
+    if(booked.createUser.toString() !== req.userId && req.userRole !== "admin"){
+        throw new MyError("Ta zowhon oorin nomiig zaswarlah erhtei", 403)
+    }
+    req.body.updateUser = req.userId;
+    for(let attr in req.body){
+        booked[attr] = req.body[attr];
+    }
+    booked.save();
     res.status(200).json({
         success: true,
         data: booked,
@@ -124,8 +156,4 @@ export const uploadBookPhoto = asyncHandler(async(req, res, next) => {
             data: file.name,
         })
     })
-    // res.status(200).json({
-    //     success: true,
-    //     data: booked,
-    // });
 });

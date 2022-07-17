@@ -12,6 +12,8 @@
     "new",
     "pdf"
     ],
+    "createUser": "62d3a0a6ece867bb515f93fb",
+    "updateUser": "62d3a0a6ece867bb515f93fb",
     "category": "62b19b345ac96b7101ae87e2"
     },
     {
@@ -28,6 +30,8 @@
     "old",
     "kindle"
     ],
+    "createUser": "62d3a0a6ece867bb515f93fb",
+    "updateUser": "62d3a0a6ece867bb515f93fb",
     "category": "62b19b345ac96b7101ae87e2"
     },
     {
@@ -43,6 +47,8 @@
     "new",
     "old"
     ],
+    "createUser": "62d3a0a6ece867bb515f93fb",
+    "updateUser": "62d3a0a6ece867bb515f93fb",
     "category": "62b19b345ac96b7101ae87e2"
     },
     {
@@ -60,6 +66,8 @@
     "kindle",
     "pdf"
     ],
+    "createUser": "62d3a0a6ece867bb515f93fb",
+    "updateUser": "62d3a0a6ece867bb515f93fb",
     "category": "62b19b345ac96b7101ae87e2"
     },
     {
@@ -74,6 +82,8 @@
     "available": [
     "pdf"
     ],
+    "createUser": "62d3a0a6ece867bb515f93fb",
+    "updateUser": "62d3a0a6ece867bb515f93fb",
     "category": "62bab0f59c6e7a2c1bda1cbe"
     },
     {
@@ -89,6 +99,8 @@
     "kindle",
     "pdf"
     ],
+    "createUser": "62d3a0a6ece867bb515f93fb",
+    "updateUser": "62d3a0a6ece867bb515f93fb",
     "category": "62bab0f59c6e7a2c1bda1cbe"
     },
     {
@@ -103,6 +115,8 @@
     "available": [
     "new"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62bab0f59c6e7a2c1bda1cbe"
     },
     {
@@ -118,6 +132,8 @@
     "new",
     "old"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62bab0f59c6e7a2c1bda1cbe"
     },
     {
@@ -132,6 +148,8 @@
     "available": [
     "new"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62ad8cc81f2dca3be8987d80"
     },
     {
@@ -149,6 +167,8 @@
     "kindle",
     "pdf"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62ad8cc81f2dca3be8987d80"
     },
     {
@@ -166,6 +186,8 @@
     "kindle",
     "pdf"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62ad8cc81f2dca3be8987d80"
     },
     {
@@ -181,6 +203,8 @@
     "new",
     "kindle"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62ad8cc81f2dca3be8987d80"
     },
     {
@@ -198,6 +222,8 @@
     "kindle",
     "pdf"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62ad8cc81f2dca3be8987d80"
     },
     {
@@ -215,6 +241,8 @@
     "kindle",
     "pdf"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62adfdf8fff1608e52fc9325"
     },
     {
@@ -230,6 +258,8 @@
     "available": [
     "old"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62adfdf8fff1608e52fc9325"
     },
     {
@@ -245,6 +275,8 @@
     "kindle",
     "pdf"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62adfdf8fff1608e52fc9325"
     },
     {
@@ -261,6 +293,8 @@
     "new",
     "pdf"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62adfdf8fff1608e52fc9325"
     },
     {
@@ -275,6 +309,8 @@
     "available": [
     "old"
     ],
+    "createUser": "62ce9f7065ef36a3bdd770df",
+    "updateUser": "62ce9f7065ef36a3bdd770df",
     "category": "62adfdf8fff1608e52fc9325"
     }
     ]

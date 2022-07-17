@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import { fileURLToPath } from 'url';
 import { cat } from "./models/Category.js";
 import {book} from "./models/Book.js"
+import {User} from "./models/User.js"
 dotenv.config({path: "./config/config.env"});
 
 mongoose.connect(process.env.MONGODB_URI, {
@@ -25,11 +26,14 @@ const books = JSON.parse(
     fs.readFileSync(__dirname + "/data/book.js", "utf-8")
 );
 
-
+const users = JSON.parse(
+    fs.readFileSync(__dirname + "/data/users.js", "utf-8")
+);
 const importData = async() => {
     try{
         await cat.create(categories);
         await book.create(books);
+        await User.create(users);
         console.log("import is done...".green.inverse);
     }catch (err){
         console.log(err);
@@ -39,6 +43,7 @@ const deleteData = async() => {
     try{
         await cat.deleteMany();
         await book.deleteMany();
+        await User.deleteMany();
         console.log("delete is done...".green.inverse);
     }catch (err){
         console.log(err.red.inverse);
