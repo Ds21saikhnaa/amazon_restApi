@@ -39,7 +39,7 @@ app.use(errorHandler);
 
 const server =  app.listen(process.env.PORT, console.log(`hello ${process.env.PORT} server`.underline.yellow.bold));
 process.on("ubhandledRejection", (err, promise) => {
-    console.log(`aldaa garsaan: ${err.message}`.underline.red.bold);
+    console.log(`aldaa garsaan!: ${err.message}`.underline.red.bold);
     server.close(() => {
         process.exit(1);
     });
